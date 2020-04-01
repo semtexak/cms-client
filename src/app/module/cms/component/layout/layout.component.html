@@ -1,0 +1,20 @@
+<nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item" routerLinkActive="nav__item--active"><a class="nav__link" [routerLink]="['/blog/archive']" routerLinkActive="nav__link--active">Archive</a></li>
+    </ul>
+    <ul class="nav__list">
+        <!-- <ng-container *ngIf="!auth?.isAuthenticated"> -->
+            <li class="nav__item" routerLinkActive="nav__item--active"><a class="nav__link" [routerLink]="['/auth/sign-in']" routerLinkActive="nav__link--active">Sign In</a></li>
+            <li class="nav__item" routerLinkActive="nav__item--active"><a class="nav__link" [routerLink]="['/auth/sign-up']" routerLinkActive="nav__link--active">Sign Up</a></li>
+        <!-- </ng-container>
+        <li class="nav__item" routerLinkActive="nav__item--active" *ngIf="auth?.isAuthenticated"><a class="nav__link" [routerLink]="['/auth/logout']" routerLinkActive="nav__link--active">Logout</a></li> -->
+    </ul>
+</nav>
+<ng-template #navbar></ng-template>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+    <div class="footer__version">v{{version}}</div>
+    <a href="https://github.com/semtexak" class="footer__author" target="_blank">Tomáš Bláha</a>
+</footer>

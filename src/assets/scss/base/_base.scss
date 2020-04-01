@@ -1,0 +1,30 @@
+@import "./../abstract/variable";
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: $font-primary;
+    background-color: $body-background;
+    color: $body-color;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    &:hover, &:focus {
+        color: $primary-color;
+        // text-decoration: none;
+    }
+}
+
+// ::selection {
+//     user-select: auto;
+//     color: #FFFFFF;
+//     background-color: $primary-color;
+// }
+
+main {
+    padding: 10px;
+}

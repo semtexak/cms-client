@@ -1,0 +1,14 @@
+<section class="posts" *ngIf="{'postsPage': postsPage$ | async} as data">
+    <article class="post" *ngFor="let post of data.postsPage.posts" [ngClass]="{'post--loading': data.postsPage.isLoading}">
+        <div class="post__container">
+            <header class="post__header placeholder">
+                <img class="post__image" [src]="'https://via.placeholder.com/400x300'" [attr.data-src]="post.img" appImgLazy>
+            </header>
+            <div class="post__content">
+                <h4 class="post__title placeholder" [routerLink]="['/blog', post.slug]">{{post.title}}</h4>
+                <p class="post__perex placeholder">{{post.perex}}</p>
+            </div>
+            <footer class="post__meta"></footer>
+        </div>
+    </article>
+</section>
