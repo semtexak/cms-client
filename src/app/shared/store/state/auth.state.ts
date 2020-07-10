@@ -3,6 +3,7 @@ import { Entity } from '../../model/base/entity.model';
 export interface LoggedUser extends Entity {
     email: string;
     roles: string[];
+    iat: number;
 }
 
 export interface JwtToken {

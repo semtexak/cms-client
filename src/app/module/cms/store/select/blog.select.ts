@@ -1,4 +1,3 @@
-import { AppState } from 'src/app/store/state/app.state';
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { BlogState } from '../state/blog.state';
 
@@ -8,9 +7,13 @@ export const getBlog = createSelector(
     selectBlog,
     (state: BlogState) => state
 );
-export const getPosts = createSelector(
+export const getHomePosts = createSelector(
     selectBlog,
-    (state: BlogState) => state.postsPage
+    (state: BlogState) => state.homePage
+);
+export const getArchive = createSelector(
+    selectBlog,
+    (state: BlogState) => state.archivePage
 );
 export const getPost = createSelector(
     selectBlog,

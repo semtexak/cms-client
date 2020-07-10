@@ -23,12 +23,14 @@ export const authenticationReducer = (state = initialState, action: Authenticati
                 isAuthenticated: true,
                 user: action.payload
             };
+        case AuthenticationActionEnum.Logout:
         case AuthenticationActionEnum.SignInError:
         case AuthenticationActionEnum.SignUpError:
             return {
                 ...state,
                 isLoading: false,
                 isAuthenticated: false,
+                token: null,
                 user: null
             };
         default:

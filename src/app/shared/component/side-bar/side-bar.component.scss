@@ -1,0 +1,14 @@
+@import "~src/assets/scss/abstract/variable";
+@import "~src/assets/scss/abstract/function";
+
+.sidebar {
+    position: fixed;
+    top: toPx($nav-height);
+    left: 0;
+    width: toPx(map-get($side-bar, "width"));
+    height: calc(100vh - #{toPx($nav-height)});
+    background-color: map-get($side-bar, "background");
+    color: map-get($side-bar, "color");
+    padding-bottom: toPx($footer-height);
+    z-index: 2;
+}

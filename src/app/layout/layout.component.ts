@@ -1,6 +1,7 @@
-import { getAuth } from '../../../../shared/store/select/auth.select';
+import { Logout } from '../shared/store/action/auth.action';
+import { getAuth } from '../shared/store/select/auth.select';
 import { Component, OnInit } from '@angular/core';
-import { version } from '../../../../../../package.json';
+import { version } from '../../../package.json';
 import { AuthenticationState } from 'src/app/shared/store/state/auth.state';
 import { Store, select } from '@ngrx/store';
 
@@ -22,4 +23,7 @@ export class LayoutComponent implements OnInit {
     this.store.pipe(select(getAuth)).subscribe((state: AuthenticationState) => this.auth = state);
   }
 
+  logout(): void {
+    this.store.dispatch(new Logout());
+  }
 }

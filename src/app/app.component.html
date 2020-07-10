@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<ng-template #navbar></ng-template>
+<ng-template #sidebar></ng-template>
+<main>
+    <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+    <div class="footer__version">v{{version}}</div>
+    <a href="https://github.com/semtexak" class="footer__author" target="_blank">Tomáš Bláha</a>
+</footer>

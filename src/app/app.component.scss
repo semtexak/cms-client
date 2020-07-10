@@ -1,0 +1,19 @@
+@import "~src/assets/scss/abstract/variable";
+
+.footer {
+  position: relative;
+  background-color: #3b3b3b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  z-index: 3;
+  border-top: 2px solid #353535;
+
+  &__author,
+  &__version {
+    font-size: 11px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}

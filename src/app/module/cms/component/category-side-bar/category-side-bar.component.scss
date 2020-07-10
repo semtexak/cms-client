@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+
+.categories {
+    list-style: none;
+    padding: 0;
+}
+
+.category {
+    &__link {
+        display: block;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 10px 15px;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.05)
+        }
+    }
+}

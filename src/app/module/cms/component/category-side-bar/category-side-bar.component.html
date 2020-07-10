@@ -1,0 +1,7 @@
+<div class="sidebar">
+    <ul class="categories" *ngIf="categories$ | async as cats">
+        <li class="category" *ngFor="let category of cats?.categories" [ngClass]="{'category--loading': cats?.isLoading}">
+            <a class="category__link" [routerLink]="['/blog/archive']" [queryParams]="{category: category.slug}">{{category.name}}</a>
+        </li>
+    </ul>
+</div>

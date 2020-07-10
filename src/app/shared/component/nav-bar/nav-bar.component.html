@@ -1,0 +1,15 @@
+<nav class="nav">
+    <ul class="nav__list">
+        <li class="nav__item" routerLinkActive="nav__item--active"><a class="nav__link" routerLinkActive="nav__link--active">Archive</a></li>
+    </ul>
+    <!-- <ul class="nav__list">
+        <ng-container *ngIf="!auth?.isAuthenticated">
+            <li class="nav__item" routerLinkActive="nav__item--active"><a class="nav__link" [routerLink]="['/auth/sign-in']" routerLinkActive="nav__link--active">Sign In</a></li>
+            <li class="nav__item" routerLinkActive="nav__item--active"><a class="nav__link" [routerLink]="['/auth/sign-up']" routerLinkActive="nav__link--active">Sign Up</a></li>
+        </ng-container>
+        <ng-container *ngIf="auth?.isAuthenticated">
+            <li class="nav__item"><button role="button" class="nav__link">{{auth.user?.email}}</button></li>
+            <li class="nav__item" routerLinkActive="nav__item--active" *ngIf="auth?.isAuthenticated"><a class="nav__link" (click)="logout()">Logout</a></li>
+        </ng-container>
+    </ul> -->
+</nav>

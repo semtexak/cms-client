@@ -9,11 +9,22 @@ body {
     background-color: $body-background;
     color: $body-color;
     margin: 0;
+
+    &.sidebar--open {
+        main {
+            margin-left: toPx(map-get($side-bar, "width"));
+            min-height: calc(100vh - #{toPx($nav-height)} - #{toPx($footer-height)});
+        }
+        .footer {            
+            margin-left: toPx(map-get($side-bar, "width"));
+        }
+    }
 }
 
 a {
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         color: $primary-color;
         // text-decoration: none;
     }
@@ -27,4 +38,9 @@ a {
 
 main {
     padding: 10px;
+    margin-top: toPx($nav-height);
+}
+
+h1 {
+    font-size: 2rem;
 }

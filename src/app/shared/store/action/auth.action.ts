@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { SignInForm } from '../../model/form/sign-in.form';
 import { LoggedUser, JwtToken } from '../state/auth.state';
+import { SignUpForm } from '../../model/form/sign-up.form';
 
 export enum AuthenticationActionEnum {
     SignIn = '[Auth] Sign in',
@@ -8,7 +9,9 @@ export enum AuthenticationActionEnum {
     SignUp = '[Auth] Sign up',
     SignInSuccess = '[Auth] Sign in/up success',
     SignInError = '[Auth] Sign in error',
-    SignUpError = '[Auth] Sign up error'
+    SignUpSuccess = '[Auth] Sign up success',
+    SignUpError = '[Auth] Sign up error',
+    Logout = '[Auth] Logout'
 }
 
 export class SignIn implements Action {
@@ -21,11 +24,15 @@ export class SignInToken implements Action {
 }
 export class SignUp implements Action {
     public readonly type = AuthenticationActionEnum.SignUp;
-    constructor(public payload: SignInForm) {}
+    constructor(public payload: SignUpForm) {}
 }
 export class SignInSuccess implements Action {
     public readonly type = AuthenticationActionEnum.SignInSuccess;
     constructor(public payload: LoggedUser) {}
+}
+export class SignUpSuccess implements Action {
+    public readonly type = AuthenticationActionEnum.SignUpSuccess;
+    constructor() {}
 }
 export class SignUpError implements Action {
     public readonly type = AuthenticationActionEnum.SignUpError;
@@ -35,5 +42,9 @@ export class SignInError implements Action {
     public readonly type = AuthenticationActionEnum.SignInError;
     constructor(public payload: {message: string}) {}
 }
+export class Logout implements Action {
+    public readonly type = AuthenticationActionEnum.Logout;
+    constructor() {}
+}
 
-export type AuthenticationActions = SignIn | SignInToken | SignUp | SignInSuccess | SignInError | SignUpError;
+export type AuthenticationActions = SignIn | SignInToken | SignUp | SignInSuccess | SignInError | SignUpSuccess | SignUpError | Logout;

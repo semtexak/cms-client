@@ -5,13 +5,18 @@ import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class PostService {
-  getArchive(): Observable<any> {
-    return this.http.get(`${environment.apiUrl}/posts`);
-  }
 
   constructor(
     private http: HttpClient
   ) {
     console.log(this.constructor.name);
+  }
+  
+  getArchive(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/posts`);
+  }
+
+  getPost(slug: string): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/posts/${slug}`);
   }
 }

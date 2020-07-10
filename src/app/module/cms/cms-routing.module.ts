@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from './component/layout/layout.component';
-import { PostsComponent } from './page/posts/posts.component';
+import { ArchiveComponent } from './page/archive/archive.component';
 import { PostComponent } from './page/post/post.component';
+import { MainComponent } from './page/main/main.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent,
     children: [
-      { path: 'archive', component: PostsComponent },
-      { path: ':slug', component: PostComponent }
+      { path: '', component: MainComponent, data: {test: 'test'} },
+      { path: 'archive', component: ArchiveComponent, data: {test: 'test'} },
+      { path: ':slug', component: PostComponent },
     ]
   }
 ];

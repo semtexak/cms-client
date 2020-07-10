@@ -1,0 +1,19 @@
+<section class="posts" *ngIf="{'archivePage': archivePage$ | async} as data">
+    <article class="post" *ngFor="let post of data.archivePage.posts" [ngClass]="{'post--loading': data.archivePage.isLoading}">
+        <div class="post__container">
+            <header class="post__header placeholder" [routerLink]="['/blog', post.slug]">
+                <img class="post__image" [src]="'https://via.placeholder.com/400x300'" [attr.data-src]="post.img" appImgLazy>
+            </header>
+            <div class="post__content">
+                <h4 class="post__title placeholder" [routerLink]="['/blog', post.slug]">{{post.title}}</h4>
+                <p class="post__perex placeholder">{{post.perex | slice:0:120}}</p>
+            </div>
+            <footer class="post__meta">
+                <ul class="post__categories">
+                    <li class="post__category" *ngFor="let category of post.categories"><a [routerLink]="['/blog/archive']" [queryParams]="{category: category._id}" class="category placeholder" [style.backgroundColor]="category.color">{{category.name}}</a></li>
+                </ul>
+                <span class="post__created placeholder">{{post.createdAt | date: 'HH:mm, dd.MM.yyyy'}}</span>
+            </footer>
+        </div>
+    </article>
+</section>

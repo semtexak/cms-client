@@ -1,0 +1,46 @@
+@import "src/assets/scss/abstract/variable";
+
+.post {
+    background-color: #ffffff;
+
+    &__title {
+        font-weight: 100;
+        text-transform: uppercase;
+        border-bottom: 1px solid $delimiter-color;
+        margin: 0;
+        padding-bottom: 15px;
+    }
+
+    &__content {
+        padding: 30px 30px;
+        margin-bottom: 30px;
+    }
+
+    &--loading {
+        // pointer-events: none;
+
+        ::selection {
+            user-select: none !important;
+            // color: transparent;
+            // background-color: transparent;
+        }
+
+        .placeholder {
+            animation-duration: 1.25s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-name: placeHolderShimmer;
+            animation-timing-function: linear;
+            background: #f6f6f6;
+            background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+            background-size: 1000px 104px;
+            color: transparent !important;
+            position: relative;
+            pointer-events: none;
+        }
+
+        .post__image {
+            visibility: hidden;
+        }
+    }
+}

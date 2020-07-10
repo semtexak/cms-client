@@ -11,4 +11,15 @@ $status-colors: (
     'danger', #000000,
     'info', #000000,
     'warning', #000000
-)
+);
+
+$delimiter-color: #f1f1f1;
+
+$nav-height: 57;
+$footer-height: 45;
+
+$side-bar: (
+    "width": 250,
+    "background": #3B3B3B,
+    "color": #FFFFFF
+);

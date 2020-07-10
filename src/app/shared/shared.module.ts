@@ -9,9 +9,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { AuthEffect } from './store/effect/auth.effect';
 import { authenticationReducer } from './store/reducer/auth.reducer';
+import { CookieService } from 'ngx-cookie-service';
+import { SideBarComponent } from './component/side-bar/side-bar.component';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 
 @NgModule({
-  declarations: [SignUpComponent, SignInComponent],
+  declarations: [SignUpComponent, SignInComponent, SideBarComponent, NavBarComponent],
   imports: [
     CommonModule,
     ImgLazyModule,
@@ -26,7 +29,8 @@ import { authenticationReducer } from './store/reducer/auth.reducer';
     ImgLazyModule,
     ImgLazyDirective,
     ReactiveFormsModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+  ],
+  providers: [CookieService]
 })
 export class SharedModule { }
